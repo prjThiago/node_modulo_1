@@ -1,0 +1,8 @@
+{
+  "name": "node_modulo_1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/prjThiago/node_modulo_1.git",
+  "author": "Thiago Morais <thiagomorais@projetosthiago.com.br>",
+  "license": "MIT"
+}
