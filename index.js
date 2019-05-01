@@ -1,6 +1,7 @@
 const express = require("express"),
   app = express(),
-  nunjucks = require("nunjucks");
+  nunjucks = require("nunjucks"),
+  users = ["Thiago Morais", "Hugo Tostes", "Dario Silva"];
 
 nunjucks.configure("views", {
   autoescape: true,
@@ -11,7 +12,11 @@ nunjucks.configure("views", {
 app.set("view engine", "njk");
 
 app.get("/", (req, res) => {
-  return res.render("list", { name: "Thiago" });
+  return res.render("list", { users });
+});
+
+app.get("/new", (req, res) => {
+  return res.render("new");
 });
 
 app.listen(3000);
