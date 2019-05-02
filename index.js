@@ -9,6 +9,10 @@ nunjucks.configure("views", {
   watch: true
 });
 
+app.use(express.urlencoded({ extended: false }));
+
+// app.use(express.json());
+
 app.set("view engine", "njk");
 
 app.get("/", (req, res) => {
@@ -17,6 +21,12 @@ app.get("/", (req, res) => {
 
 app.get("/new", (req, res) => {
   return res.render("new");
+});
+
+app.post("/create", (req, res) => {
+  users.push(req.body.user);
+
+  return res.redirect("/");
 });
 
 app.listen(3000);
